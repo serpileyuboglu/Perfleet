@@ -1,4 +1,3 @@
-
 @PER10-229
 Feature: Perfleet app login with valid credential
   As a user, I should be able to log in with valid credentials to different user type.
