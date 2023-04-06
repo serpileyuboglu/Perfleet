@@ -2,7 +2,6 @@
 Feature: Perfleet app login with valid credential
   As a user, I should be able to log in with valid credentials to different user type.
   User should land on the "Dashboard" page
-
   Users:Driver,Sales Manager and Store Manager
 
   Background:User is on the login page
