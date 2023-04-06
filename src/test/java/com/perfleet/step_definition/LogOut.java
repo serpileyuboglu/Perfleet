@@ -52,6 +52,7 @@ public class LogOut {
     public void user_should_not_go_back_home_page() {
         String expectedUrl = "https://qa.perfleet.com/";
         String actualUrl = Driver.getDriver().getCurrentUrl();
+
         Assert.assertFalse(expectedUrl,false);
        // BrowserUtils.verifyURLContains("https://qa.perfleet.com/");
 

@@ -11,9 +11,8 @@ Feature: Perfleet app login with valid credential
 
   @PER10-226
   Scenario:Login as a Driver
-    When user enters driver username
-    And user enters driver password
-    Then user should see the dashboard
+    When user enters driver username "user1" and password "UserUser123"
+    Then user should see the "Quick Launchpad"
 
   @PER10-227
   Scenario:Login as a Sales Manager

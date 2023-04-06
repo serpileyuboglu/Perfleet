@@ -36,6 +36,9 @@ public class PerfleetLoginPage {
     @FindBy(xpath = "//i[@class='fa-caret-down']")
     public WebElement logoutButton;
 
+    @FindBy(xpath="//h1[@class='oro-subtitle']")
+    public WebElement quickLunchPad;
+
 
 
     public void login(String username,String password){

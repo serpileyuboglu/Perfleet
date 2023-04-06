@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/perfleet/step_definition",
         dryRun = false,
-        tags="@PER10-244",
+        tags="@PER10-229",
         publish = false
 )
 

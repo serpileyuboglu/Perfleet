@@ -59,7 +59,8 @@ public class InvalidLogin {
 
     @Then("User should see his {string} in the profile menu")
     public void userShouldSeeHisInTheProfileMenu(String username) {
-        Assert.assertFalse(perfleetLoginPage.shownUserName.getText(),false);
+        //Assert.assertFalse(perfleetLoginPage.shownUserName.getText(),false);
+        Assert.assertEquals(perfleetLoginPage.shownUserName.getText(),username);
 
     }
 }

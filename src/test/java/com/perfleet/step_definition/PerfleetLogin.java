@@ -8,6 +8,7 @@ import com.perfleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 
 public class PerfleetLogin {
@@ -19,16 +20,23 @@ public class PerfleetLogin {
 
       Driver.getDriver().get(ConfigurationReader.getProperty("perfleet.url"));
     }
-    @When("user enters driver username")
-    public void user_enters_driver_username() {
-        perfleetLoginPage.inputUsername.sendKeys("user1");
+//    @When("user enters driver username")
+//    public void user_enters_driver_username() {
+//        perfleetLoginPage.inputUsername.sendKeys("user1");
+//
+//    }
+//    @When("user enters driver password")
+//    public void user_enters_driver_password() {
+//        perfleetLoginPage.inputPassword.sendKeys("UserUser123");
+//
+//    }
+//    @Then("user should see the Quick Launchpad")
+//    public void userShouldSeeTheQuickLaunchpad() {
+//        perfleetLoginPage.loginButton.click();
+//
+//        BrowserUtils.verifyTitle("Quick Launchpad");
+//    }
 
-    }
-    @When("user enters driver password")
-    public void user_enters_driver_password() {
-        perfleetLoginPage.inputPassword.sendKeys("UserUser123");
-
-    }
 
 
     @When("user enters Sales Manager username")
@@ -62,5 +70,19 @@ public class PerfleetLogin {
     }
 
 
+    @When("user enters driver username {string} and password {string}")
+    public void userEntersDriverUsernameAndPassword(String username, String password) {
 
+        String userName = ConfigurationReader.getProperty("driver_username");
+        String passWord = ConfigurationReader.getProperty("driver_password");
+        perfleetLoginPage.inputUsername.sendKeys(userName);
+        perfleetLoginPage.inputPassword.sendKeys(passWord);
+        perfleetLoginPage.loginButton.click();
+    }
+
+    @Then("user should see the {string}")
+    public void userShouldSeeThe(String expected) {
+        Assert.assertEquals(expected,perfleetLoginPage.quickLunchPad.getText());
+
+    }
 }

@@ -5,17 +5,22 @@ import com.perfleet.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
 
-    @Before(value = "@smoke")
-    public void init(){
-        System.out.println("This is running before every step definitions");
-    }
+    @Before
+    public void setUp(){
+        System.out.println();
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.getDriver().manage().window().maximize();
 
+    }
     @After
     public void tearDown(){
-            Driver.closeDriver();
+
+        Driver.closeDriver();
     }
 
 }
